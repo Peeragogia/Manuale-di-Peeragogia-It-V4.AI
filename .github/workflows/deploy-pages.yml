@@ -1,0 +1,30 @@
+name: Build e Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Installa Pandoc
+        run: |
+          sudo apt-get install pandoc
+
+      - name: Genera HTML
+        run: |
+          mkdir public
+          pandoc README.md -o public/index.html --standalone -V lang=it-IT
+
+      - name: Deploy su GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

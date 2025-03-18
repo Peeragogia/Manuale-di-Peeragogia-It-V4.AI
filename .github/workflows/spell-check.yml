@@ -1,0 +1,15 @@
+name: Controllo Ortografico
+
+on: [push, pull_request]
+
+jobs:
+  prose-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Vale Linter
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          files: '.'
+          fail_on_error: false
