@@ -1,22 +1,71 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
+# File .gitignore per Manuale-V4
+
+# Ignora file di sistema
+.DS_Store
+Thumbs.db
+
+# Ignora file di editor/IDE
 .vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
-TestResults.xml
+.idea/
+*.swp
+*.swo
+
+# Ignora dipendenze locali
+node_modules/
+vendor/
+bower_components/
+
+# Ignora file generati da Jekyll (per GitHub Pages)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignora file di output generati
+*.log
+*.tmp
+*.bak
+*.cache
+
+# Ignora file di ambiente
+.env
+*.env.local
+
+# Ignora file di sistema operativo
+*.orig
+*.rej
+
+# Ignora file di pacchetti
+*.gem
+*.zip
+*.tar.gz
+
+# Ignora file di debug
+*.log
+*.pid
+*.pid.lock
+
+# Ignora file di backup
+*.bak
+*.old
+*.backup
+
+# Ignora file di configurazione locale
+_config.local.yml
+
+# Ignora file di lock (se usi package manager)
+package-lock.json
+yarn.lock
+Gemfile.lock
+
+# Ignora file di anteprima Markdown (se usi strumenti locali)
+*.html
+*.pdf
+*.epub
+*.mobi
+
+# Ignora file di cache Markdown
+.cache/
+.temp/
+
+# Ignora file di output generati da strumenti di linting
+.markdownlint.json
